@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Auth Section -->
+    <div class="auth-container" id="authSection">
+        <div class="auth-box">
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+            
+            <form id="loginForm" class="auth-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <form id="signupForm" class="auth-form hidden">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App Section -->
+    <div class="app-container hidden" id="appSection">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-info">
+                <img src="avatar-placeholder.png" alt="User Avatar" class="avatar">
+                <span class="username">John Doe</span>
+            </div>
+            <nav class="nav-menu">
+                <button class="add-task-btn">+ New Task</button>
+                <ul>
+                    <li><a href="#" class="active">All Tasks</a></li>
+                    <li><a href="#">Today</a></li>
+                    <li><a href="#">Upcoming</a></li>
+                    <li><a href="#">Completed</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>My Tasks</h1>
+                <div class="filters">
+                    <select class="filter-priority">
+                        <option value="">Priority</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <select class="filter-status">
+                        <option value="">Status</option>
+                        <option value="todo">To Do</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Task List -->
+            <div class="task-list">
+                <!-- Task Item Template -->
+                <div class="task-item">
+                    <div class="task-header">
+                        <input type="checkbox" class="task-checkbox">
+                        <h3 class="task-title">Complete Project Proposal</h3>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    <div class="task-details">
+                        <p class="task-description">Write and review the project proposal document</p>
+                        <div class="task-meta">
+                            <span class="due-date">Due: Oct 30, 2023</span>
+                            <span class="assigned-to">Assigned to: John Doe</span>
+                        </div>
+                    </div>
+                    <div class="task-actions">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Task Modal -->
+    <div class="modal hidden" id="taskModal">
+        <div class="modal-content">
+            <h2>Add New Task</h2>
+            <form id="taskForm">
+                <input type="text" placeholder="Task Title" required>
+                <textarea placeholder="Task Description" required></textarea>
+                <select required>
+                    <option value="">Select Priority</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <input type="date" required>
+                <input type="text" placeholder="Assign
